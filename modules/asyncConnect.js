@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+//定义action type 因为必须保证它是全局唯一的，所以这种命名方式最好。
 export const LOAD = 'reduxAsyncConnect/LOAD';
 export const LOAD_SUCCESS = 'reduxAsyncConnect/LOAD_SUCCESS';
 export const LOAD_FAIL = 'reduxAsyncConnect/LOAD_FAIL';
@@ -107,7 +107,24 @@ function loadFail(key, error) {
     error
   };
 }
+/*
+asyncItems
+[{
+  deferred: true,
+  promise: ({store: {dispatch, getState}}) => {
+    if (!isLoaded(getState())) {
+      return dispatch(loadWidgets());
+    }
+  }
+}]
 
+下面的方法对上面的asyncItems进行再封装
+分两种情况：
+item中不包含key：则对item不进行处理
+item中包含key：则会对item中的promise方法进行dispath封装
+
+最后返回map后的asyncItems
+*/
 function wrapWithDispatch(asyncItems) {
   return asyncItems.map(item =>
     item.key ? {...item, promise: (options) => {
@@ -128,7 +145,7 @@ function wrapWithDispatch(asyncItems) {
   );
 }
 /*
-使用范例
+使用
 @asyncConnect([{
   deferred: true,
   promise: ({store: {dispatch, getState}}) => {
@@ -140,6 +157,7 @@ function wrapWithDispatch(asyncItems) {
 */
 export function asyncConnect(asyncItems) {
   return Component => {
+    //在组件上保存map后的asyncItems
     Component.reduxAsyncConnect = wrapWithDispatch(asyncItems);
 
     //有关reduce的解释https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=control

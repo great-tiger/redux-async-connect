@@ -12,3 +12,5 @@ class App extends Component {
 	
 }
 ```
+## state.reduxAsyncConnect 结构
+使用redux-async-connect会在state中出现reduxAsyncConnect属性，保存该组件使用到的数据。
