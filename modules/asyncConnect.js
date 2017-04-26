@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+//定义常量
 export const LOAD = 'reduxAsyncConnect/LOAD';
 export const LOAD_SUCCESS = 'reduxAsyncConnect/LOAD_SUCCESS';
 export const LOAD_FAIL = 'reduxAsyncConnect/LOAD_FAIL';
