@@ -15,6 +15,10 @@ class App extends Component {
 ## 客户端使用范例
 ```
 // 1. Connect your data, similar to react-redux @connect
+// asyncConnect 最终调用的是 react-redux 中的connect
+// 核心逻辑 
+//  Component.reduxAsyncConnect=asyncItems 
+//  connect({})(Component);
 @asyncConnect([{
   lunch: (params, helpers) => Promise.resolve({id: 1, name: 'Borsch'})
 }])
