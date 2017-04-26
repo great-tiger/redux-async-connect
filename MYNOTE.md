@@ -54,6 +54,8 @@ connect({})(Component);
 ```
 render={(props) => <RouterContext {...props} />}
 ```
+官方还提出了一个要求：
+> Ensure that you render a <RouterContext> at the end of the line, passing all the props passed to render
 这就好理解了，也就是说 ReduxAsyncConnect 想参与了rendering过程
 具体如何实现的呢？
 
