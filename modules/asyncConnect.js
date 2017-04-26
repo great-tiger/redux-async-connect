@@ -154,6 +154,11 @@ function wrapWithDispatch(asyncItems) {
     }
   }
 }])
+
+如果asyncItems中每一项中都不包含key的话，下面的处理逻辑就是
+Component.reduxAsyncConnect=asyncItems
+connect({})(Component);
+剩下的就是好好研究一下Component.reduxAsyncConnect,什么时候用到了，起到了什么作用？
 */
 export function asyncConnect(asyncItems) {
   return Component => {
@@ -167,6 +172,7 @@ export function asyncConnect(asyncItems) {
         {}//result的初始值
       );
     };
+    //如果asyncItems中都不包含key的话，finalMapStateToProps={}
     //finalMapStateToProps 将state映射到Component属性props
     return connect(finalMapStateToProps)(Component);
   };
