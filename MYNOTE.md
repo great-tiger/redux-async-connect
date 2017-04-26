@@ -7,7 +7,7 @@ asyncConnect(mapStateToProps)(ReactComponent)
 ```
 使用方式二： 
 ```
-@asyncConnect([])
+@asyncConnect(mapStateToProps)
 class App extends Component {
 	
 }
