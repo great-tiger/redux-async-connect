@@ -25,6 +25,7 @@ class App extends Component {
 class App extends React.Component {
   render() {
     // 2. access data as props
+    // 注意这里是直接访问数据了
     const lunch = this.props.lunch
     return (
       <div>{lunch.name}</div>
