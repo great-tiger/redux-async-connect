@@ -42,7 +42,7 @@ render((
 ```
 ## state.reduxAsyncConnect 结构
 使用redux-async-connect会在state中出现reduxAsyncConnect属性，保存该组件使用到的数据。
-为什么会出现reduxAsyncConnect属性呢？源于使用时下面这行代码
+为什么会出现reduxAsyncConnect属性呢？源于使用时下面这行代码,使用实例的第三步
 ```
 const store = createStore(combineReducers({reduxAsyncConnect}));
 ```
