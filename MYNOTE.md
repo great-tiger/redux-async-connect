@@ -59,6 +59,9 @@ render={(props) => <RouterContext {...props} />}
 
 这就好理解了，也就是说 ReduxAsyncConnect 想参与了rendering过程  
 具体如何实现的呢？ 
+简单看了一下代码，没有具体深究，简单理解一下吧。
+通过asyncConnect装饰器，会向Component.reduxAsyncConnect存储信息。在reduxAsyncConnect(react 组件)组件中,我们就可以读取这部分信息了。等待所有组件的异步请求完成后，再渲染组件。基本是为了达到这个效果的。  
+以后再深入研究   
 
 ## state.reduxAsyncConnect 结构
 使用redux-async-connect会在state中出现reduxAsyncConnect属性，保存该组件使用到的数据。
