@@ -1,6 +1,6 @@
 redux-async-connect 解析
 =======================
-asyncConnect 最终调用的是 react-redux 中的connect
+asyncConnect 最终调用的是 react-redux 中的connect  
 使用方式－：  
 ```
 asyncConnect(mapStateToProps)(ReactComponent)
