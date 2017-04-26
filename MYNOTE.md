@@ -15,9 +15,9 @@ class App extends Component {
 ## 客户端使用范例
 ```
 // 1. Connect your data, similar to react-redux @connect
-@asyncConnect({
+@asyncConnect([{
   lunch: (params, helpers) => Promise.resolve({id: 1, name: 'Borsch'})
-})
+}])
 class App extends React.Component {
   render() {
     // 2. access data as props
