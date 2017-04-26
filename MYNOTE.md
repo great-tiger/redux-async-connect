@@ -41,7 +41,7 @@ render((
   </Provider>
 ), el)
 ```
-最终达到的效果就是2步中看到的，魔法是如何实现的呢？
+最终达到的效果就是2步中看到的，魔法是如何实现的呢?   
 第1步因为配置项中没有key属性，查看源码发现处理逻辑很简单就是  
 ```
 Component.reduxAsyncConnect=asyncItems 
